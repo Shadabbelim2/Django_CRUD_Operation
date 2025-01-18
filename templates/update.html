@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block tital %} Receipe | Update {% endblock tital %}
+
+{% block body %}
+
+<div class="container my-5 card p-3 shadow-lg">
+    <h2 class="text-center mb-4">Update Recipe Submission Form</h2>
+    <form  method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+      <!-- Recipe Name -->
+      <div class="mb-3">
+        <label for="recipeName" class="form-label">Recipe Name</label>
+        <input type="text" class="form-control" value="{{receipe.receipe_name}}" id="recipeName" name="recipeName" placeholder="Enter the recipe name" required>
+      </div>
+
+      <!-- Recipe Description -->
+      <div class="mb-3">
+        <label for="recipeDescription" class="form-label">Recipe Description</label>
+        <textarea class="form-control" id="recipeDescription" name="recipeDescription" rows="4" placeholder="Write a brief description of the recipe" required>{{receipe.receipe_description}}</textarea>
+      </div>
+
+      <!-- Recipe Image -->
+      <div class="mb-3">
+        <label for="recipeImage" class="form-label">Upload Recipe Image</label>
+        <input type="file" class="form-control" id="recipeImage" name="recipeImage" accept="image/*" >
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-success w-100">Update Recipe</button>
+    </form>
+  </div>
+
+{% endblock body %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %} Receipe | All Receipe {% endblock title %}
+
+
+
+{% block body %}
+
+
+<div class="mt-5">
+    <div class="mx-auto col-6">
+        <form >
+        <input type="search" class="form-control" id="recipeName" name="search" placeholder="Search" >
+        <button class="btn btn-success mt-2" >Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="container" >
+<table class="table my-5 table-bordered table-sm">
+    <thead class="table-light">
+      <tr>
+        <th scope="col">S. No. </th>
+        <th scope="col">Receipe Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Image</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
+
+
+      </tr>
+     
+    </thead>
+    <tbody class="table-group-divider">
+        {% for new in Receipes  %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{new.receipe_name}}</td>
+        <td>{{new.receipe_description}}</td>
+        <td><img src="{{ new.receipe_image.url }}" alt="{{ new.receipe_name }}" style="max-width: 100px; height: auto;"></td>
+        <td> <a href ="/delete-receipe/{{new.id}}/" class= "btn btn-danger" > Delete </a> </td>
+        <td> <a href ="/update-receipe/{{new.id}}/" class= "btn btn-success" > Edit </a> </td>
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock body %}
