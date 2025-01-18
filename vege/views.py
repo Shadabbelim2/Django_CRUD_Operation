@@ -22,6 +22,7 @@ def index(request):
 
 def show(request):
     Receipese=Receipe.objects.all()
+    
     if request.GET.get('search'): 
         Receipese=Receipese.filter(receipe_name__icontains = request.GET.get('search'))
     context={"Receipes" : Receipese}
