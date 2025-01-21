@@ -49,3 +49,8 @@ def update_receipe(request , id):
     context={'receipe':queryset}
     return render(request , 'update.html' , context )
      
+def ragister(request):
+    return render(request , 'ragister.html')  
+
+def login(request):
+    return render(request , 'login.html')        

@@ -7,7 +7,11 @@ urlpatterns = [
     path('' , views.index , name= "home"),
     path('show.html/' , views.show , name= "show"),
     path('delete-receipe/<id>/' , views.delete_receipe , name="delete_receipe"),
-    path('update-receipe/<id>/' , views.update_receipe , name="update_receipe")
+    path('update-receipe/<id>/' , views.update_receipe , name="update_receipe"),
+    path('ragister' , views.ragister , name= "ragister"),
+    path('login' , views.login , name= "login"),
+
+
 
 
 ]

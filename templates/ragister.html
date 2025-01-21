@@ -3,7 +3,7 @@
 {% block tital %}Ragistretion {% endblock tital %} 
 
 {% block body %}
-<div class="container mt-5">
+<div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card">
@@ -12,8 +12,9 @@
           </div>
           <div class="card-body">
             <form action="/register" method="POST">
+                {% csrf_token %}
               <!-- Name -->
-              <div class="form-group">
+              <div class="form-group my-2">
                 <label for="name">Full Name</label>
                 <input
                   type="text"
@@ -26,7 +27,7 @@
               </div>
 
               <!-- Email -->
-              <div class="form-group">
+              <div class="form-group my-2">
                 <label for="email">Email Address</label>
                 <input
                   type="email"
@@ -39,7 +40,7 @@
               </div>
 
               <!-- Password -->
-              <div class="form-group">
+              <div class="form-group my-2"  >
                 <label for="password">Password</label>
                 <input
                   type="password"
@@ -52,7 +53,7 @@
               </div>
 
               <!-- Confirm Password -->
-              <div class="form-group">
+              <div class="form-group my-2">
                 <label for="confirm_password">Confirm Password</label>
                 <input
                   type="password"
@@ -66,7 +67,7 @@
 
               <!-- Submit Button -->
               <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary btn-block">
+                <button type="submit" class="btn btn-primary btn-block mt-2">
                   Register
                 </button>
               </div>
