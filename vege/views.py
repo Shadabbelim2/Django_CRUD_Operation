@@ -29,6 +29,8 @@ def index(request):
     return render(request, 'index.html')
 
 def show(request):
+    if request.user.is_anonymous:
+        return redirect("/login-page")
     Receipese=Receipe.objects.all()
     
     if request.GET.get('search'): 
