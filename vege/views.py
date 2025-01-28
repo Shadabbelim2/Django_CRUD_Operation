@@ -31,7 +31,7 @@ def index(request):
 def show(request):
     if request.user.is_anonymous:
         return redirect("/login-page")
-    Receipese=Receipe.objects.all()
+    Receipese=Receipe.admin_objects.all()
     
     if request.GET.get('search'): 
         Receipese=Receipese.filter(receipe_name__icontains = request.GET.get('search'))
